@@ -1,7 +1,5 @@
 # Dashpad Tutorial
 
-A hackable universal dashboard framework for your desktop task automation and vistualise tooling.
-
 A tutorial module.
 
 ## Video Demo
