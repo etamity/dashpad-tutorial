@@ -10,5 +10,8 @@
   "license": "MIT",
   "dashpad": {
     "public": true
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
   }
 }
