@@ -27,7 +27,7 @@ module.exports = params => {
         value: count
       }
     ]);
-    Dashpad.settings.set('test', count);
+    //Dashpad.settings.set('test', count);
 
   }, 200);
 };
