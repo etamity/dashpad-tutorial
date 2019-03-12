@@ -1,5 +1,5 @@
 ---
-Tabs_1:
+Tabs_components:
   activeTab: 0
   Container_Container:
     Card_Container:
@@ -681,7 +681,7 @@ Tabs_1:
   Container_Color:
     Card:
       Header:
-       title: Color
+        title: Color
       Buttongroup:
         type: wrap
         items:
@@ -693,11 +693,11 @@ Tabs_1:
             className: bg-linkedin text-white
           - label: google-plus
             className: bg-google-plus text-white
-      Markdown: 
+      Markdown:
         content: >
-            You can attach `.bg-{brand}` to any components className to apply
-            the brand color.
-            Also you can assign `Button.brand` value to set the button brand style 
+          You can attach `.bg-{brand}` to any components className to apply
+          the brand color.
+          Also you can assign `Button.brand` value to set the button brand style
       Row:
         Container_preset:
           Html:
@@ -739,4 +739,4 @@ Tabs_1:
               <div class="bg-spotify text-white">spotify</div> 
               <div class="bg-vine text-white">vine</div> 
               <div class="bg-foursquare text-white">foursquare</div> 
-              <div class="bg-vimeo text-white">vimeo</div> 
+              <div class="bg-vimeo text-white">vimeo</div>

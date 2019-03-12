@@ -10,7 +10,7 @@ $vars:
   header: This is the title of the card
   progress: 0
   username: joey
-Tabs_1:
+Tabs_ui:
   activeTab: 0
   Card_github:
     label: Dashpad Api
