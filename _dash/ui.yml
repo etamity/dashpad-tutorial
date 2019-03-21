@@ -34,6 +34,7 @@ Tabs_ui:
             brand: twitter
             onClick: >
               (e) => {
+                Dashpad.settings.set('test', 'count');
                 const notification_title = Dashpad.getVars('notification.title');
                 const notification_message = Dashpad.getVars('notification.message');
                 Dashpad.showNotification({
@@ -115,10 +116,6 @@ Tabs_ui:
       content: This is text component
       weight: bold
       transform: uppercase
-    Progress:
-      value: ${progress}
-      animated: true
-      max: 100
     List:
       items:
         - item 1
@@ -147,6 +144,27 @@ Tabs_ui:
         type: password
         label: Password
         tooltip: Please input the password
+    Row_2:
+      Button_test:
+        block: true
+        label: ${header}
+        color: warning
+        onClick: >
+          (e) => {
+            Dashpad.setVars('header', ' hahahhaha');
+          }
+      Button_test1:
+        block: true
+        label: ${header}
+        color: info
+        onClick: >
+          (e) => {
+            Dashpad.setVars('header', ' hahahhaha');
+          }
+    Progress:
+      value: ${progress}
+      animated: true
+      max: 1000
     Buttongroup:
       type: group
       items: 

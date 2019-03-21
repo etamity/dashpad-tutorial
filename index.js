@@ -3,7 +3,7 @@ module.exports = params => {
   const { username } = params;
   console.log(username);
   setInterval(() => {
-    if (count < 100) {
+    if (count < 1000) {
       count = count + 1;
     } else {
       Dashpad.exit();
@@ -20,7 +20,7 @@ module.exports = params => {
     Dashpad.setVars([
       {
         keyPath: 'header',
-        value: username + ':' + date.getSeconds()
+        value: username + ':' + date.getMilliseconds()
       },
       {
         keyPath: 'progress',
@@ -29,5 +29,5 @@ module.exports = params => {
     ]);
     //Dashpad.settings.set('test', count);
 
-  }, 200);
+  }, 42);
 };
