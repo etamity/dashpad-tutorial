@@ -7,191 +7,23 @@ $vars:
   modal:
     title: This is modal title
     message: This is modal message body
+  context:
+    type: click to get target type
+    name: click to get target name
+    keyPath: click to get target keyPath
+    label: click to get target label
+    position: click to get target position
+    brand: click to get target brand
   header: This is the title of the card
   progress: 0
   username: joey
 Tabs_ui:
   activeTab: 0
-  Card_github:
-    label: Dashpad Api
-    Header:
-      title: This is Dashpad Api Examples
-    Container:
-      Row:
-        Form_notification:
-          Text: 
-            tag: h3
-            content: Notification
-          Title:
-            type: text
-            value: ${notification.title}
-          Message:
-            type: text
-            value: ${notification.message}
-          Button_1:
-            label: Show Notification
-            position: left
-            brand: twitter
-            onClick: >
-              (e) => {
-                Dashpad.settings.set('test', 'count');
-                const notification_title = Dashpad.getVars('notification.title');
-                const notification_message = Dashpad.getVars('notification.message');
-                Dashpad.showNotification({
-                  title: notification_title,
-                  message: notification_message
-                });
-              }
-        Form_toast:
-          Text: 
-            tag: h3
-            content: Toast
-          Message:
-            type: text
-            value: ${toast}
-          Button_2:
-            label: Show Toast
-            position: right
-            brand: facebook
-            onClick: >
-              (e) => {
-                const toast_message = Dashpad.getVars('toast');
-                Dashpad.showToast({
-                  message: toast_message
-                });
-              }
-        Form_Modal:
-          Text: 
-            tag: h3
-            content: Modal
-          Title:
-            type: text
-            value: ${modal.title}
-          Message:
-            type: text
-            value: ${modal.message}
-          Button_1:
-            label: Show Modal
-            position: left
-            brand: twitter
-            onClick: >
-              (e) => {
-                const modal_title = Dashpad.getVars('modal.title');
-                const modal_message = Dashpad.getVars('modal.message');
-                Dashpad.showModal({
-                  title: modal_title,
-                  message: modal_message
-                });
-              }
-  Card_1:
-    label: This is a tab
-    Header:
-      Button_1:
-        label: Show Notification
-        position: left
-        brand: twitter
-        onClick: >
-          (e) => {
-            Dashpad.showNotification({
-              title: 'Notification title',
-              message: 'Notification message'
-            });
-          }
-      title: ${header}
-      Button_2:
-        label: Show Toast
-        position: right
-        brand: facebook
-        onClick: >
-          (e) => {
-            Dashpad.showToast({
-              message: 'Toast message'
-            });
-          }
-    Html:
-      content: <h2>Hi, this is html content</h2>
-    Text:
-      tag: h1
-      color: warning
-      content: This is text component
-      weight: bold
-      transform: uppercase
-    List:
-      items:
-        - item 1
-        - item 2
-        - content:
-            title: List Title
-            description: List Description
-    Row_1:
-      Form:
-        Link_as1_aad:
-          label: test
-          className: p-0
-          onClick: >
-            (e) => {
-              console.log(this);
-            }
-        Text_1:
-          content: asdasda
-    Row:
-      Username:
-        type: text
-        label: Username
-        tooltip: Please input your username
-        value: ${username}
-      Password: 
-        type: password
-        label: Password
-        tooltip: Please input the password
-    Row_2:
-      Button_test:
-        block: true
-        label: ${header}
-        color: warning
-        onClick: >
-          (e) => {
-            Dashpad.setVars('header', ' hahahhaha');
-          }
-      Button_test1:
-        block: true
-        label: ${header}
-        color: info
-        onClick: >
-          (e) => {
-            Dashpad.setVars('header', ' hahahhaha');
-          }
-    Progress:
-      value: ${progress}
-      animated: true
-      max: 1000
-    Buttongroup:
-      type: group
-      items: 
-        - label: submit
-          color: info
-          onClick: >
-            (e) => {
-                const username = Dashpad.getVars('username');
-                console.log(username);
-                Dashpad.showModal({
-                  title: 'Your username is',
-                  message: username
-                });
-
-            }
-        - label: Run Node Script
-          color: danger
-          onClick: >
-            (e) => {
-              const username = Dashpad.getVars('username');
-              Dashpad.run('index.js', {username});
-            }
-    Table:
-        labels: ['id', 'name', 'email', 'color']
-        dataset: [
-            ['1', 'joey', 'etamity@gmail.com', 'red'],
-            ['2', 'joe', 'joey@gmail.com', 'blue'],
-            ['3', 'jack', 'jack@gmail.com', 'green'],
-            ['3', 'joseph', 'joseph@gmail.com', 'black']
-        ]
+  onMount: >
+    (e) => { commonFunc(this); }
+  onChange: >
+    (e) => {
+      onTabsChange();
+    }
+  Tab_1: !import components/@Card_dashpad.yml
+  Tab_2: !import components/@Card_test.yml

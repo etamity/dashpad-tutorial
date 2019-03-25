@@ -1,0 +1,99 @@
+label: Dashpad Api
+Header:
+title: ${header}
+Container:
+Row:
+  Form_notification:
+    Text: 
+      tag: h3
+      content: Notification
+    Title:
+      type: text
+      value: ${notification.title}
+    Message:
+      type: text
+      value: ${notification.message}
+    Button_1:
+      label: Notification
+      position: left
+      brand: twitter
+      onClick: >
+        (e) => {
+          Dashpad.settings.set('test', 'count');
+          const notification_title = Dashpad.getVars('notification.title');
+          const notification_message = Dashpad.getVars('notification.message');
+          Dashpad.showNotification({
+            title: notification_title,
+            message: notification_message
+          });
+        }
+  Form_toast:
+    Text: 
+      tag: h3
+      content: Toast
+    Message:
+      type: text
+      value: ${toast}
+    Button_2:
+      label: Toast
+      position: right
+      brand: facebook
+      onClick: >
+        (e) => {
+          const toast_message = Dashpad.getVars('toast');
+          Dashpad.showToast({
+            message: toast_message
+          });
+        }
+  Form_Modal:
+    Text: 
+      tag: h3
+      content: Modal
+    Title:
+      type: text
+      value: ${modal.title}
+    Message:
+      type: text
+      value: ${modal.message}
+    Button_1:
+      label: Show Modal
+      position: left
+      brand: twitter
+      onClick: >
+        (e) => {
+          const modal_title = Dashpad.getVars('modal.title');
+          const modal_message = Dashpad.getVars('modal.message');
+          Dashpad.showModal({
+            title: modal_title,
+            message: modal_message
+          });
+        }
+Row_1:
+  Form_This:
+    Text: 
+      tag: h3
+      content: This Context
+    Collapse:
+      isOpen: true
+      List:
+        items:
+          - ${context.label}
+          - ${context.name}
+          - ${context.type}
+          - ${context.brand}
+          - ${context.position}
+          - ${context.keyPath}
+    Button_1:
+      label: Get Context
+      position: left
+      brand: linkedin
+      onClick: >
+        (e) => {
+          console.log(this);
+          setTargetProps(this.props);
+          const brand = this.get('brand');
+          const isOpen = this.getSibling('Collapse.isOpen');
+          const newButtonLabel = (isOpen ? 'isOpen' : 'isClosed') 
+          this.set('label', newButtonLabel+ ' : ' + brand);
+          this.setSibling('Collapse.isOpen', !isOpen);
+        }
