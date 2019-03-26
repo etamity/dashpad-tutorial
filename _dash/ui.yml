@@ -25,5 +25,5 @@ Tabs_ui:
     (e) => {
       onTabsChange();
     }
-  Tab_1: !import components/@Card_dashpad.yml
-  Tab_2: !import components/@Card_test.yml
+  Slot_1: !import components/@Card_dashpad.yml
+  Slot_2: !import components/@Card_test.yml

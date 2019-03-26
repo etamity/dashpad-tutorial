@@ -1,104 +1,105 @@
-label: This is a tab
-Header:
-  Button_1:
-    label: Notification
-    position: left
-    brand: twitter
-    onClick: >
-      (e) => {
-        Dashpad.showNotification({
-          title: 'Notification title',
-          message: 'Notification message'
-        });
-      }
-  title: ${header}
-  Button_2:
-    label: Toast
-    position: right
-    brand: facebook
-    onClick: >
-      (e) => {
-        Dashpad.showToast({
-          message: 'Toast message'
-        });
-      }
-Row:
-  Username:
-    type: text
-    label: Username
-    tooltip: Please input your username
-    value: ${username}
-  Password: 
-    type: password
-    label: Password
-    tooltip: Please input the password
-Row_2:
-  Button_test:
-    block: true
-    label: ${header}
-    color: warning
-    onClick: >
-      (e) => {
-        Dashpad.setVars('header', ' hahahhaha');
-      }
-  Button_test1:
-    block: true
-    label: ${header}
-    color: info
-    onClick: >
-      (e) => {
-        Dashpad.setVars('header', ' hahahhaha');
-      }
-Progress:
-  value: ${progress}
-  animated: true
-  max: 1000
-Buttongroup:
-  type: group
-  items: 
-    - label: submit
+tab: This is a tab
+Card:
+  Header:
+    Button_1:
+      label: Notification
+      position: left
+      brand: twitter
+      onClick: >
+        (e) => {
+          Dashpad.showNotification({
+            title: 'Notification title',
+            message: 'Notification message'
+          });
+        }
+    title: ${header}
+    Button_2:
+      label: Toast
+      position: right
+      brand: facebook
+      onClick: >
+        (e) => {
+          Dashpad.showToast({
+            message: 'Toast message'
+          });
+        }
+  Row:
+    Username:
+      type: text
+      label: Username
+      tooltip: Please input your username
+      value: ${username}
+    Password: 
+      type: password
+      label: Password
+      tooltip: Please input the password
+  Row_2:
+    Button_test:
+      block: true
+      label: ${header}
+      color: warning
+      onClick: >
+        (e) => {
+          Dashpad.setVars('header', ' hahahhaha');
+        }
+    Button_test1:
+      block: true
+      label: ${header}
       color: info
       onClick: >
         (e) => {
-            const username = Dashpad.getVars('username');
-            console.log(username);
-            Dashpad.showModal({
-              title: 'Your username is',
-              message: username
-            });
+          Dashpad.setVars('header', ' hahahhaha');
+        }
+  Progress:
+    value: ${progress}
+    animated: true
+    max: 1000
+  Buttongroup:
+    type: group
+    items: 
+      - label: submit
+        color: info
+        onClick: >
+          (e) => {
+              const username = Dashpad.getVars('username');
+              console.log(username);
+              Dashpad.showModal({
+                title: 'Your username is',
+                message: username
+              });
 
-        }
-    - label: Run Node Script
-      color: danger
-      onClick: >
-        (e) => {
-          const username = Dashpad.getVars('username');
-          Dashpad.run('index.js', {username});
-        }
-Html:
-  content: <h2>Hi, this is html content</h2>
-Text:
-  tag: h1
-  color: warning
-  content: This is text component
-  weight: bold
-  transform: uppercase
-List:
-  items:
-    - item 1
-    - item 2
-    - content:
-        title: List Title
-        description: List Description
-Row_1:
-  Form:
-    Link_as1_aad:
-      label: test
-      className: p-0
-      onClick: >
-        (e) => {
-          console.log(this);
-        }
-    Text_1:
-      content: asdasda
-Table: !import components/sub/@Table.yml
+          }
+      - label: Run Node Script
+        color: danger
+        onClick: >
+          (e) => {
+            const username = Dashpad.getVars('username');
+            Dashpad.run('index.js', {username});
+          }
+  Html:
+    content: <h2>Hi, this is html content</h2>
+  Text:
+    tag: h1
+    color: warning
+    content: This is text component
+    weight: bold
+    transform: uppercase
+  List:
+    items:
+      - item 1
+      - item 2
+      - content:
+          title: List Title
+          description: List Description
+  Row_1:
+    Form:
+      Link_as1_aad:
+        label: test
+        className: p-0
+        onClick: >
+          (e) => {
+            console.log(this);
+          }
+      Text_1:
+        content: asdasda
+  Table: !import components/sub/@Table.yml
