@@ -2,6 +2,10 @@ module.exports = params => {
   let count = 0;
   const { username } = params;
   console.log(username);
+
+  Dashpad.showToast({
+    message: 'hello '+ username
+  })
   setInterval(() => {
     if (count < 1000) {
       count = count + 1;
@@ -29,5 +33,5 @@ module.exports = params => {
     ]);
     //Dashpad.settings.set('test', count);
 
-  }, 42);
+  }, 420);
 };
