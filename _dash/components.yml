@@ -194,7 +194,9 @@ Tabs_components:
                 className: d-flex
                 childClassName: m-1
                 onClick: >
-                  console.log('test group', e.target);
+                  (e) => {
+                    console.log('test group', e.target);
+                  }
                 items:
                   - label: Button 1
                   - label: Button 2
@@ -208,6 +210,21 @@ Tabs_components:
                   - label: Button 10
                   - label: Button 11
                   - label: Button 12
+            Field_Header:
+              title: This is Dropdown
+              Buttongroup_dropdown:
+                type: dropdown # ['group', 'toolbar', 'dropdown', 'wrap']
+                label: Menu
+                className: d-flex
+                childClassName: m-1
+                onClick: >
+                  (e) => {
+                      console.log('test group', e.target);
+                    }
+                items:
+                  - label: Button 1
+                  - label: Button 2
+                  - label: Button 3
             ```
         Card:
           Buttongroup:
@@ -216,29 +233,9 @@ Tabs_components:
             className: d-flex
             childClassName: m-1
             onClick: >
-                console.log('test group', e.target);
-            items:
-              - label: Button 1
-              - label: Button 2
-              - label: Button 3
-              - label: Button 4
-              - label: Button 5
-              - label: Button 6
-              - label: Button 7
-              - label: Button 8
-              - label: Button 9
-              - label: Button 10
-              - label: Button 11
-              - label: Button 12
-          Buttongroup_dropdown:
-            type: dropdown # ['group', 'toolbar', 'dropdown', 'wrap']
-            label: Menu
-            className: d-flex
-            childClassName: m-1
-            onClick: >
               (e) => {
-                  console.log('test group', e.target);
-                }
+                    console.log('test group', e.target);
+              }
             items:
               - label: Button 1
               - label: Button 2
@@ -252,6 +249,21 @@ Tabs_components:
               - label: Button 10
               - label: Button 11
               - label: Button 12
+          Field_Header:
+            title: This is Dropdown
+            Buttongroup_dropdown:
+              type: dropdown # ['group', 'toolbar', 'dropdown', 'wrap']
+              label: Menu
+              className: d-flex
+              childClassName: m-1
+              onClick: >
+                (e) => {
+                    console.log('test group', e.target);
+                  }
+              items:
+                - label: Button 1
+                - label: Button 2
+                - label: Button 3
     Card_Header:
       Header:
         title: Header
@@ -498,13 +510,13 @@ Tabs_components:
                 label: Button Field
               Field_radio:
                 type: radio
-                title: Radio Field
+                label: Radio Field
                 options:
                   - Male
                   - Female
               Field_checkbox:
                 type: checkbox
-                title: Checkbox Field
+                label: Checkbox Field
                 options:
                   - Foot Ball
                   - Piano
@@ -512,7 +524,7 @@ Tabs_components:
                   - Movies
               Field_select:
                 type: select
-                title: Select Field
+                label: Select Field
                 options:
                   - London
                   - York
@@ -533,13 +545,13 @@ Tabs_components:
             label: Button Field
           Field_radio:
             type: radio
-            title: Radio Field
+            label: Radio Field
             options:
               - Male
               - Female
           Field_checkbox:
             type: checkbox
-            title: Checkbox Field
+            label: Checkbox Field
             options:
               - Foot Ball
               - Piano
@@ -547,7 +559,7 @@ Tabs_components:
               - Movies
           Field_select:
             type: select
-            title: Select Field
+            label: Select Field
             options:
               - London
               - York
@@ -576,7 +588,10 @@ Tabs_components:
                 size: md
                 className: ''
                 onClick: >
-                    console.log('Button clicked')
+                  (e) => {
+                    console.log('Button clicked');
+                  }
+
               ```
           Buttongroup:
             type: wrap
@@ -618,14 +633,14 @@ Tabs_components:
 
               Gender:
                 type: radio
-                title: Gender
+                label: Gender
                 inline: true
                 options:
                   - Male
                   - Female
               Hobbies:
                 type: checkbox
-                title: Foot Ball
+                label: Foot Ball
                 options:
                   - Foot Ball
                   - Piano
@@ -633,7 +648,7 @@ Tabs_components:
                   - Movies
               City:
                 type: select
-                title: City
+                label: City
                 options:
                   - London
                   - York
@@ -644,14 +659,14 @@ Tabs_components:
             Form:
               Gender:
                 type: radio
-                title: Gender
+                label: Gender
                 inline: true
                 options:
                   - Male
                   - Female
               Hobbies:
                 type: checkbox
-                title: Foot Ball
+                label: Foot Ball
                 options:
                   - Foot Ball
                   - Piano
@@ -659,7 +674,7 @@ Tabs_components:
                   - Movies
               City:
                 type: select
-                title: City
+                label: City
                 options:
                   - London
                   - York
