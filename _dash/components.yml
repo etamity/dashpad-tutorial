@@ -6,6 +6,13 @@ Tabs_components:
     Card_Container:
       Header:
         title: Container
+        Button:
+          position: right
+          label: es6
+          onClick: >
+            (e) => {
+              Dashpad.run('es6.js');  
+            }
       Row_Code:
         Markdown:
           content: >
