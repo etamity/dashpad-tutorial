@@ -9,3 +9,4 @@ Card:
         (e) => {
           Dashpad.run('es6.js');  
         }
+  
