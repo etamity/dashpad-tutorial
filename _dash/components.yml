@@ -3,16 +3,46 @@ $vars:
 Tabs_components:
   activeTab: 0
   Container_Container:
+    Card_Collapse:
+      Header:
+        title: Collapse
+      Row_Code:
+        Markdown:
+          content: >
+            ```yaml
+              Collapse:
+                isOpen: true # [true, false]
+                Container:
+                  Card:
+                    Header:
+                      title: Header
+                    Text:
+                      position: center
+                      content: Click the button to open/close 
+              ```
+        Container:
+          Field_Button:
+            type: button
+            color: primary
+            label: button to control collapse
+            onClick: >
+              (e) => {
+                const isOpen = this.getSibling('Collapse.isOpen');
+                this.setSibling('Collapse.isOpen', !isOpen);
+                this.set('label', `open : ${!isOpen}`);
+              }
+          Collapse:
+            isOpen: true
+            Container:
+              Card:
+                Header:
+                  title: Header
+                Text:
+                  position: center
+                  content: Click the button to open/close 
     Card_Container:
       Header:
         title: Container
-        Button:
-          position: right
-          label: es6
-          onClick: >
-            (e) => {
-              Dashpad.run('es6.js');  
-            }
       Row_Code:
         Markdown:
           content: >
@@ -325,24 +355,22 @@ Tabs_components:
                 - list item 1
                 - list item 2
                 - list item 3
-                - content:
-                    title: list item 4
-                    description: this is list item 4 content
-                    Badge:
-                      icon: icon-drop
-                      label: new
+                - title: list item 4
+                  description: this is list item 4 content
+                  Badge:
+                    icon: icon-drop
+                    label: new
             ```
         List:
           items:
             - list item 1
             - list item 2
             - list item 3
-            - content:
-                title: list item 4
-                description: this is list item 4 content
-                Badge:
-                  icon: icon-drop
-                  label: new
+            - title: list item 4
+              description: this is list item 4 content
+              Badge:
+                icon: icon-drop
+                label: new
     Card_Text:
       Header:
         title: Text

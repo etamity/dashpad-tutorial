@@ -1,0 +1,11 @@
+tab: React & ES6
+Card:
+  Header:
+    title: ${header}
+    Button:
+      position: right
+      label: es6
+      onClick: >
+        (e) => {
+          Dashpad.run('es6.js');  
+        }

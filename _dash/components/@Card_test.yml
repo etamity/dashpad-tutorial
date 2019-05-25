@@ -48,7 +48,9 @@ Card:
       color: info
       onClick: >
         (e) => {
-          Dashpad.setVars('header', ' hahahhaha');
+          const username = Dashpad.getVars('header');
+          Dashpad.setVars('username', username);
+          
         }
   Progress:
     value: ${progress}
@@ -88,9 +90,8 @@ Card:
     items:
       - item 1
       - item 2
-      - content:
-          title: List Title
-          description: List Description
+      - title: List Title
+        description: List Description
   Row_1:
     Form:
       Link_as1_aad:
