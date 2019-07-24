@@ -91,7 +91,7 @@ Card:
         onClick: >
           (e) => {
             console.log(this);
-            setTargetProps(this.props);
+            setTargetProps(this);
             const brand = this.get('brand');
             const isOpen = this.getSibling('Collapse.isOpen');
             const newButtonLabel = (isOpen ? 'isOpen' : 'isClosed') 
