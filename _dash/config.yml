@@ -13,3 +13,6 @@ navs:
       - name: Dashpad Api
         icon: fa fa-github
         goto: ui.yml
+      - name: Mdx Test
+        icon: fa fa-github
+        goto: components/mdx/page1.mdx

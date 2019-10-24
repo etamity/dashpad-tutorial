@@ -10,10 +10,10 @@ Card:
           content: Notification
         Title:
           type: text
-          value: ${notification.title} ${username}
+          defaultValue: ${notification.title}
         Message:
           type: text
-          value: ${notification.message}
+          defaultValue: ${notification.message}
         Button_1:
           label: Notification
           position: left
@@ -52,10 +52,10 @@ Card:
           content: Modal
         Title:
           type: text
-          value: ${modal.title}
+          defaultValue: ${modal.title}
         Message:
           type: text
-          value: ${modal.message}
+          defaultValue: ${modal.message}
         Button_1:
           label: Show Modal
           position: left

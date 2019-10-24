@@ -28,7 +28,7 @@ Card:
       type: text
       label: Username
       tooltip: Please input your username
-      value: ${username}
+      defaultValue: ${username}
     Password: 
       type: password
       label: Password
@@ -53,7 +53,7 @@ Card:
           
         }
   Progress:
-    value: ${progress}
+    defaultValue: ${progress}
     animated: true
     max: 1000
   Buttongroup:

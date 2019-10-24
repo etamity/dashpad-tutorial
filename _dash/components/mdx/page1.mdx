@@ -1,0 +1,41 @@
+export default Layout;
+class Counter extends React.Component {
+  constructor() {
+      super();
+      this.state = { count: 0, timmer: 0 };
+      // this.doClick = this.doClick.bind(this);
+  }
+  componentDidMount() {
+      this.interval = setInterval(() => {
+      this.setState(state => ({ count: state.count + 1 }))
+      }, 1000)
+  }
+  componentWillUnmount() {
+      clearInterval(this.interval)
+  }
+  doClick() {
+    console.log(Store, Dashpad);
+  }
+  render() {
+      return (
+      <center>
+          <h3>
+          {this.state.count}
+          <button onClick={this.doClick}> {this.state.timmer} </button>
+          </h3>
+      </center>
+      )
+  }
+}
+console.log(Store, Dashpad);
+
+# Hello, World!
+
+Below is an example of JSX embedded in Markdown. <br /> **Try and change
+the background color!**
+
+<div style={{ padding: '20px', backgroundColor: 'tomato' }}>
+  <h3>This is JSX</h3>
+  <Counter />
+</div>
+
