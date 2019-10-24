@@ -71,7 +71,7 @@ Tabs_components:
                 activeTab: 0
                 onMount: >
                   (e) => {
-                    console.log('component is mounted!')
+                    console.log('component is mounted!');
                   }
                 Card_1:
                     label: tab1
@@ -82,7 +82,7 @@ Tabs_components:
           activeTab: 0
           onMount: >
             (e) => {
-              console.log('component is mounted!')
+              console.log('component is mounted!');
             }
           Card_1:
             label: tab1
