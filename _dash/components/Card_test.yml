@@ -103,4 +103,4 @@ Card:
           }
       Text_1:
         content: asdasda
-  Table: !import components/sub/@Table.yml
+  Row_table: !import components/sub/Table.yml

@@ -25,6 +25,6 @@ Tabs_ui:
     (e) => {
       onTabsChange();
     }
-  Slot_1: !import components/@Card_dashpad.yml
-  Slot_2: !import components/@Card_test.yml
-  Slot_3: !import components/@Card_es6_react.yml
+  Slot_1: !import components/Card_dashpad.yml
+  Slot_2: !import components/Card_test.yml
+  Slot_3: !import components/Card_es6_react.yml
