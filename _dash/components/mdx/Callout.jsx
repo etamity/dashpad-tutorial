@@ -1,12 +1,19 @@
+import Counter from './Counter.jsx';
+
 export default class Callout extends React.Component {
+  onClick() {
+    Dashpad.showToast({
+      message: 'hahahah'
+    });
+  }
   render() {
     return (
       <div className="callout callout-info">
-        <small className="text-muted">New Clients</small>
         <br />
-        <strong className="h4">
+        <div className="h4" onClick={this.onClick}>
           9999
-        </strong>
+          <Counter />
+          </div>
       </div>
     );
   }
