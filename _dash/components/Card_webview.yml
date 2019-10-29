@@ -1,0 +1,14 @@
+tab: Webview
+Card:
+  Header:
+    title: ${header}
+    Button:
+      position: right
+      label: Refresh
+      onClick: >
+        (e) => {
+          const { Webview } = this.getParent('Webview');
+          Webview.loadURL('https://dashpad.org');
+        }
+  Webview:
+    src: http://google.com

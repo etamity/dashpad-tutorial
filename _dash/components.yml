@@ -27,6 +27,7 @@ Tabs_components:
             label: button to control collapse
             onClick: >
               (e) => {
+                console.log('isOpen');
                 const isOpen = this.getSibling('Collapse.isOpen');
                 this.setSibling('Collapse.isOpen', !isOpen);
                 this.set('label', `open : ${!isOpen}`);
@@ -39,7 +40,7 @@ Tabs_components:
                   title: Header
                 Text:
                   position: center
-                  content: Click the button to open/close 
+                  content: Click the button to open/close
     Card_Container:
       Header:
         title: Container
