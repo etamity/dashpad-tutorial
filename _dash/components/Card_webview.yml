@@ -7,7 +7,8 @@ Card:
       label: Refresh
       onClick: >
         (e) => {
-          const { Webview } = this.getParent('Webview');
+          const Webview = this.parent('Webview').ref();
+          console.log(Webview);
           Webview.loadURL('https://dashpad.org');
         }
   Webview:

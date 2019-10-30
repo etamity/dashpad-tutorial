@@ -27,10 +27,11 @@ Tabs_components:
             label: button to control collapse
             onClick: >
               (e) => {
-                console.log('isOpen');
-                const isOpen = this.getSibling('Collapse.isOpen');
-                this.setSibling('Collapse.isOpen', !isOpen);
-                this.set('label', `open : ${!isOpen}`);
+                const isOpenTarget = this.sibling('Collapse.isOpen');
+                const isOpen = isOpenTarget.value();
+                console.log('isOpen', isOpen);
+                isOpenTarget.set(!isOpen);
+                this.get('label').set( `isOpen: ${isOpen}`);
               }
           Collapse:
             isOpen: true

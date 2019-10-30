@@ -90,11 +90,12 @@ Card:
           brand: linkedin
           onClick: >
             (e) => {
-              console.log(this);
+              console.log('props', this.get());
               setTargetProps(this.props);
-              const brand = this.get('brand');
-              const isOpen = this.getSibling('Collapse.isOpen');
+              const brand = this.get('brand').value();
+              const isOpenProp = this.sibling('Collapse.isOpen');
+              const isOpen = isOpenProp.value();
               const newButtonLabel = (isOpen ? 'isOpen' : 'isClosed') 
-              this.set('label', newButtonLabel+ ' : ' + brand);
-              this.setSibling('Collapse.isOpen', !isOpen);
+              this.get('label').set(newButtonLabel+ ' : ' + brand);
+              isOpenProp.set(!isOpen);
             }
